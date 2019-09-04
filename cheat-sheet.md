@@ -58,12 +58,14 @@ git push origin :develop/tag_name
 # 直前のコミットメッセージを修正する
 git commit --amend -m"修正内容"
 
+
 # submoduleを追加する(REPO_DIRを指定するとそのディレクトリにソースが取得される)
-git submodule add {REPO} {REPO_DIR} 
+git submodule add {REPO} {REPO_DIR}
+# ネストしたsubmoduleをすべて取り込む
+git submodule update --init --recursive
 ```
 ​
 ### rebase
-​
 ```sh
 # 派生元ブランチ(BASE_BRANCH)の更新に合わせてコミットを変更する(FEATURE_BRANCHにて)
 git rebase <BASE_BRANCH>
